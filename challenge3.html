@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest - Tantangan 3</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        padding-top: 56px; /* Offset for fixed navbar */
+      }
+
+      .challenge-container {
+        padding: 20px;
+      }
+
+      .editor-container {
+        height: 400px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+      }
+
+      .editor {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 10px;
+      }
+
+      .btn-submit {
+        margin-top: 20px;
+      }
+
+      .output {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">CodeQuest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="latihan-soal.html">Latihan Soal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="challenges.html">Tantangan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Sertifikat</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container challenge-container">
+      <h2>Tantangan 3: Membangun Aplikasi Daftar Tugas</h2>
+      <p>
+        Dalam tantangan ini, Anda diminta untuk membuat aplikasi daftar tugas
+        sederhana menggunakan HTML, CSS, dan JavaScript. Aplikasi ini harus
+        memungkinkan pengguna untuk menambahkan tugas, menandai tugas sebagai
+        selesai, dan menghapus tugas. Tulis kode Anda di editor di bawah ini dan
+        tekan tombol "Kirim Kode" untuk memeriksa hasilnya.
+      </p>
+
+      <div class="editor-container">
+        <textarea
+          id="editor"
+          class="editor"
+          placeholder="Tulis kode HTML, CSS, dan JavaScript Anda di sini..."
+        >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tugas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #taskList {
+            list-style: none;
+            padding: 0;
+        }
+        #taskList li {
+            background: #f4f4f4;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #taskList li.completed {
+            text-decoration: line-through;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button.remove {
+            background: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Tugas</h1>
+    <input type="text" id="taskInput" placeholder="Tambahkan tugas baru" />
+    <button id="addTask">Tambah Tugas</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.getElementById('addTask').addEventListener('click', function() {
+            var taskInput = document.getElementById('taskInput');
+            var taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                var li = document.createElement('li');
+                li.innerHTML = `<span>${taskText}</span> <button class="remove">Hapus</button>`;
+                document.getElementById('taskList').appendChild(li);
+                taskInput.value = '';
+
+                // Add event listener for marking tasks as completed
+                li.addEventListener('click', function() {
+                    li.classList.toggle('completed');
+                });
+
+                // Add event listener for removing tasks
+                li.querySelector('.remove').addEventListener('click', function() {
+                    li.remove();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+            </textarea
+        >
+      </div>
+
+      <button class="btn btn-primary btn-submit mt-3" onclick="executeCode()">
+        Kirim Kode
+      </button>
+
+      <div class="output mt-4">
+        <h4>Hasil Kode:</h4>
+        <iframe
+          id="output"
+          style="width: 100%; height: 400px; border: none"
+        ></iframe>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function executeCode() {
+        var code = document.getElementById("editor").value.trim();
+        var outputFrame = document.getElementById("output");
+
+        // Create a blob URL to run the code in an iframe
+        var blob = new Blob([code], { type: "text/html" });
+        var url = URL.createObjectURL(blob);
+        outputFrame.src = url;
+
+        // Clean up blob URL after use
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>

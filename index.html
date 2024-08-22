@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest - Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .hero {
+        background-color: #007bff;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .highlight-courses {
+        padding: 50px 0;
+      }
+
+      .course-card {
+        margin-bottom: 30px;
+      }
+
+      .course-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .btn-success:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      /* Responsif untuk Home Page */
+
+      /* Untuk layar dengan lebar maksimum 768px (tablet dan perangkat sejenis) */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 60px 0;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .highlight-courses {
+          padding: 30px 0;
+        }
+
+        .course-card {
+          margin-bottom: 20px;
+        }
+
+        .course-card .card-title {
+          font-size: 1.2rem;
+        }
+
+        .course-card .card-text {
+          font-size: 1rem;
+        }
+      }
+
+      /* Untuk layar dengan lebar maksimum 576px (smartphone dan perangkat sejenis) */
+      @media (max-width: 576px) {
+        .hero {
+          padding: 56px 0;
+        }
+
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero p {
+          font-size: 0.875rem;
+        }
+
+        .highlight-courses {
+          padding: 20px 0;
+        }
+
+        .course-card {
+          margin-bottom: 15px;
+        }
+
+        .course-card img {
+          height: auto;
+        }
+
+        .course-card .card-title {
+          font-size: 1rem;
+        }
+
+        .course-card .card-text {
+          font-size: 0.875rem;
+        }
+
+        .btn-lg {
+          font-size: 1rem;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">CodeQuest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="latihan-soal.html">Latihan Soal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="challenges.html">Tantangan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Sertifikat</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="container">
+        <h1>Selamat Datang di CodeQuest</h1>
+        <p>
+          Website pembelajaran coding untuk pemula dengan tutorial interaktif,
+          latihan soal, dan tantangan coding.
+        </p>
+        <a href="latihan-soal.html" class="btn btn-success btn-lg"
+          >Mulai Belajar</a
+        >
+      </div>
+    </div>
+
+    <!-- Highlight Courses/Challenges -->
+    <div class="container highlight-courses">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card course-card">
+            <img
+              src="images/dasar pemograman.jpg"
+              class="card-img-top"
+              alt="Dasar-dasar Pemrograman"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Dasar-dasar Pemrograman</h5>
+              <p class="card-text">
+                Mulai belajar dengan dasar-dasar pemrograman untuk pemula.
+              </p>
+              <a href="courses.html" class="btn btn-primary">Lihat Kursus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card course-card">
+            <img
+              src="images/tantangan.jpg"
+              class="card-img-top"
+              alt="Tantangan Proyek Pertama"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Proyek Pertama Anda</h5>
+              <p class="card-text">
+                Coba tantangan mingguan untuk menguji kemampuan Anda.
+              </p>
+              <a href="challenges.html" class="btn btn-primary"
+                >Mulai Tantangan</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card course-card">
+            <img
+              src="images/Biru Sertifikat Terbaru Certificate.png"
+              class="card-img-top"
+              alt="Sertifikat"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Raih Sertifikat</h5>
+              <p class="card-text">
+                Dapatkan sertifikat setelah menyelesaikan kursus atau tantangan.
+              </p>
+              <a href="certificates.html" class="btn btn-primary"
+                >Lihat Sertifikat</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

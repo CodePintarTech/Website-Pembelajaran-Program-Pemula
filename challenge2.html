@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest - Tantangan 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        padding-top: 56px; /* Offset for fixed navbar */
+      }
+
+      .challenge-container {
+        padding: 20px;
+      }
+
+      .editor-container {
+        height: 300px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+      }
+
+      .editor {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 10px;
+      }
+
+      .btn-submit {
+        margin-top: 20px;
+      }
+
+      .output {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">CodeQuest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="latihan-soal.html">Latihan Soal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="challenges.html">Tantangan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Sertifikat</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container challenge-container">
+      <h2>Tantangan 2: Membuat Kalkulator Sederhana</h2>
+      <p>
+        Dalam tantangan ini, Anda diminta untuk membuat kalkulator sederhana
+        menggunakan JavaScript. Kalkulator harus dapat melakukan operasi dasar
+        seperti penjumlahan, pengurangan, perkalian, dan pembagian. Tulis kode
+        JavaScript Anda di editor di bawah ini dan tekan tombol "Kirim Kode"
+        untuk memeriksa hasilnya.
+      </p>
+
+      <div class="editor-container">
+        <textarea
+          id="editor"
+          class="editor"
+          placeholder="Tulis kode JavaScript Anda di sini..."
+        >
+<!-- 
+Tulis kode JavaScript Anda di sini
+-->
+            </textarea
+        >
+      </div>
+
+      <button class="btn btn-primary btn-submit mt-3" onclick="executeCode()">
+        Kirim Kode
+      </button>
+
+      <div class="output mt-4">
+        <h4>Hasil Kode:</h4>
+        <iframe
+          id="output"
+          style="width: 100%; height: 300px; border: none"
+        ></iframe>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function executeCode() {
+        var code = document.getElementById("editor").value.trim();
+        var outputFrame = document.getElementById("output");
+
+        // Create a blob URL to run the code in an iframe
+        var blob = new Blob([code], { type: "text/html" });
+        var url = URL.createObjectURL(blob);
+        outputFrame.src = url;
+
+        // Clean up blob URL after use
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>

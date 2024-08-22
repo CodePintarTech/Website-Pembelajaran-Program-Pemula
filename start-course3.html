@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest - Mulai Kursus Pengembangan Web Lanjutan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        padding-top: 56px;
+      }
+
+      .course-content {
+        padding: 50px 15px;
+      }
+
+      .course-content h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .course-content p {
+        color: #555;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+
+      .question h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .question input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .btn-submit {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+      }
+
+      /* Responsif untuk konten kursus */
+
+      /* Untuk layar dengan lebar maksimum 768px (tablet dan perangkat sejenis) */
+      @media (max-width: 768px) {
+        .course-content {
+          padding: 30px 15px;
+        }
+
+        .course-content h2 {
+          font-size: 1.75rem;
+        }
+
+        .course-content p {
+          font-size: 0.95rem;
+        }
+
+        .question h4 {
+          font-size: 1.1rem;
+        }
+
+        .question input[type="text"] {
+          font-size: 0.95rem;
+        }
+
+        .btn-submit {
+          font-size: 0.95rem;
+          padding: 8px 16px;
+        }
+      }
+
+      /* Untuk layar dengan lebar maksimum 576px (smartphone dan perangkat sejenis) */
+      @media (max-width: 576px) {
+        .course-content {
+          padding: 20px 10px;
+        }
+
+        .course-content h2 {
+          font-size: 1.5rem;
+        }
+
+        .course-content p {
+          font-size: 0.9rem;
+        }
+
+        .question h4 {
+          font-size: 1rem;
+        }
+
+        .question input[type="text"] {
+          font-size: 0.9rem;
+        }
+
+        .btn-submit {
+          font-size: 0.85rem;
+          padding: 6px 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">CodeQuest</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="latihan-soal.html">Latihan Soal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="challenges.html">Tantangan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Sertifikat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">Lihat Kursus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container course-content">
+      <h2>Mulai Kursus Pengembangan Web Lanjutan - Modul 1</h2>
+      <p>
+        Selamat datang di modul pertama dari kursus Pengembangan Web Lanjutan.
+        Di bawah ini adalah latihan interaktif untuk mempelajari teknik
+        integrasi API eksternal. Lengkapi latihan berikut untuk melanjutkan ke
+        modul berikutnya.
+      </p>
+
+      <div class="question">
+        <h4>
+          1. Jelaskan apa yang dimaksud dengan API eksternal dan bagaimana cara
+          menggunakannya dalam aplikasi web?
+        </h4>
+        <input
+          type="text"
+          id="answer1"
+          placeholder="Tulis jawaban Anda di sini"
+        />
+      </div>
+
+      <div class="question">
+        <h4>
+          2. Sebutkan langkah-langkah dasar untuk mengintegrasikan API eksternal
+          menggunakan fetch API di JavaScript!
+        </h4>
+        <input
+          type="text"
+          id="answer2"
+          placeholder="Tulis jawaban Anda di sini"
+        />
+      </div>
+
+      <button class="btn btn-primary btn-submit" onclick="submitAnswers()">
+        Kirim Jawaban
+      </button>
+    </div>
+
+    <script>
+      function submitAnswers() {
+        var answer1 = document.getElementById("answer1").value.trim();
+        var answer2 = document.getElementById("answer2").value.trim();
+
+        alert("Jawaban telah dikirimkan.");
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
