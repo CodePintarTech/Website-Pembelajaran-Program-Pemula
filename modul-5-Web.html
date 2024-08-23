@@ -69,6 +69,43 @@
         background-color: #c82333;
       }
 
+      /* Gaya default untuk link navbar */
+      .navbar-nav .nav-link {
+        color: #343a40; /* Warna teks link default */
+        font-size: 1rem;
+        padding: 10px 15px; /* Padding untuk jarak yang lebih baik */
+        border-radius: 5px; /* Sudut membulat pada link */
+        transition: all 0.3s ease; /* Transisi halus untuk semua properti */
+      }
+
+      /* Efek hover untuk link navbar */
+      .navbar-nav .nav-link:hover {
+        color: #ffffff; /* Warna teks putih saat hover */
+        background: linear-gradient(
+          90deg,
+          #007bff 0%,
+          #0056b3 100%
+        ); /* Gradien latar belakang */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+      }
+
+      /* Menambahkan efek underline dengan pseudo-element */
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #ffffff; /* Warna underline */
+        transition: width 0.3s ease; /* Transisi efek underline */
+      }
+
+      /* Efek underline saat hover */
+      .navbar-nav .nav-link:hover::after {
+        width: 100%; /* Lebar underline saat hover */
+      }
+
       @media (max-width: 768px) {
         .course-content {
           padding: 30px 0;
